@@ -8,6 +8,7 @@ from email.message import EmailMessage
 import cv2
 import numpy as np
 from fpdf import FPDF
+import random
 
 
 menu_category = ["Tea & Coffee","Beverages","Fast Food","Starters","Main Course","Dessert"]
@@ -224,8 +225,9 @@ def bill_button_operation():
         bill.title("Bill")
         bill.geometry("670x500+300+100")
         bill_text_area = Text(bill, font=("arial", 12))
+        random_no = random.randrange(1000,10000)
         st = "\t\t\t\t**GRACEFUL HEART RESTAURANT**\n\t\t\tDLQ1231\n"
-        st += "\t\t\tCODE.NO:- 34VASFD2215HKAAA\n"
+        st += "\t\t\tCODE.NO:- "+str(random_no)+"\n"
         st += "-"*61 + "BILL" + "-"*61 + "\nDate:- "
         
         t = time.localtime(time.time())
